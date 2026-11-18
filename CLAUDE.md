@@ -17,7 +17,7 @@ There is no test suite, linter, or `npm run lint` configured in this project.
 This is a single-page portfolio site: React 18 + TypeScript + Vite + Tailwind CSS, with `framer-motion` for animation and `lucide-react` for icons. There is no router — `App.tsx` simply stacks section components in order:
 
 ```
-Navbar → HeroSection → ProjectsSection → AboutSection → SkillsSection → ContactSection → Footer
+Navbar → HeroSection → ProjectsSection → AboutSection → EducationSection → SkillsSection → ContactSection → Footer
 ```
 
 Each section under `src/components/` is a self-contained component with its own content hard-coded as local data (arrays/constants) at the top of the file — there is no CMS, JSON data file, or shared content store. When updating site copy, project entries, skills, or links, edit the relevant component directly:
