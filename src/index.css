@@ -2,92 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 64px;
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: #0b0d0c;
-  color: #e8ebe6;
-  font-family: 'Geist', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1a1714 0%, #12100d 26%, #090807 100%);
+  color: #F4EFE8;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-::selection {
-  background: #c5f24c;
-  color: #0b0d0c;
+[id] { scroll-margin-top: 80px; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0d0c0a; }
+::-webkit-scrollbar-thumb { background: rgba(201, 154, 91, 0.6); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 154, 91, 0.85); }
+
+/* Selection */
+::selection { background: rgba(201, 154, 91, 0.35); color: #fff; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #e7d5b0 0%, #d4a86e 38%, #c08349 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-:focus-visible {
-  outline: 2px solid #c5f24c;
-  outline-offset: 2px;
+/* Subtle dot grid background layer */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-@layer components {
-  .shell {
-    @apply mx-auto w-full max-w-[1280px] px-5 md:px-8;
-  }
-
-  .eyebrow {
-    @apply font-mono text-xs uppercase tracking-[0.14em] text-muted;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-signal px-5 py-3 text-sm font-medium text-ink transition-colors hover:bg-fg;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center gap-2 border border-line bg-panel px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-muted;
-  }
-
-  .skip-link {
-    @apply fixed left-3 top-3 z-[60] -translate-y-20 bg-signal px-4 py-2 text-sm font-medium text-ink focus:translate-y-0;
-  }
-}
-
-/* Blueprint grid behind architecture diagrams */
-.blueprint {
-  background-color: #101311;
-  background-image:
-    linear-gradient(rgba(232, 235, 230, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 235, 230, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Registration marks on the portrait frame */
-.corner-frame {
+/* Gradient border via pseudo */
+.card-gradient-border {
   position: relative;
+  isolation: isolate;
 }
-.corner-frame::before,
-.corner-frame::after {
+.card-gradient-border::before {
   content: '';
   position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: #c5f24c;
-  border-style: solid;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(214, 167, 102, 0.55), rgba(160, 116, 65, 0.22), rgba(255,255,255,0.08));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.corner-frame::before {
-  top: -1px;
-  left: -1px;
-  border-width: 2px 0 0 2px;
-}
-.corner-frame::after {
-  right: -1px;
-  bottom: -1px;
-  border-width: 0 2px 2px 0;
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
+.card-gradient-border:hover::before { opacity: 1; }
