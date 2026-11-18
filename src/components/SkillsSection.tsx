@@ -13,7 +13,6 @@ interface Skill {
 interface Group {
   Icon: LucideIcon
   title: string
-  subtitle: string
   accent: string
   glowColor: string
   skills: Skill[]
@@ -23,7 +22,6 @@ const GROUPS: Group[] = [
   {
     Icon: Brain,
     title: 'LLM Engineering',
-    subtitle: 'LLM Engineer · AI Engineer',
     accent: 'linear-gradient(90deg, #6366F1, #A855F7)',
     glowColor: 'rgba(99,102,241,0.22)',
     skills: [
@@ -44,7 +42,6 @@ const GROUPS: Group[] = [
   {
     Icon: Layers,
     title: 'Frameworks & MLOps',
-    subtitle: 'AI/ML Engineer · Forward Deployed',
     accent: 'linear-gradient(90deg, #3B82F6, #6366F1)',
     glowColor: 'rgba(59,130,246,0.18)',
     skills: [
@@ -65,7 +62,6 @@ const GROUPS: Group[] = [
   {
     Icon: Cloud,
     title: 'Cloud & Vector DBs',
-    subtitle: 'AI Engineer · LLM Engineer',
     accent: 'linear-gradient(90deg, #06B6D4, #3B82F6)',
     glowColor: 'rgba(6,182,212,0.18)',
     skills: [
@@ -84,7 +80,6 @@ const GROUPS: Group[] = [
   {
     Icon: Code2,
     title: 'Programming & APIs',
-    subtitle: 'AI/ML Engineer · Forward Deployed',
     accent: 'linear-gradient(90deg, #10B981, #06B6D4)',
     glowColor: 'rgba(16,185,129,0.18)',
     skills: [
@@ -103,7 +98,6 @@ const GROUPS: Group[] = [
   {
     Icon: Database,
     title: 'Data Engineering',
-    subtitle: 'Data Scientist · AI/ML Engineer',
     accent: 'linear-gradient(90deg, #F59E0B, #EF4444)',
     glowColor: 'rgba(245,158,11,0.18)',
     skills: [
@@ -121,7 +115,6 @@ const GROUPS: Group[] = [
   {
     Icon: BarChart2,
     title: 'Data Science & Analytics',
-    subtitle: 'Data Scientist · Forward Deployed',
     accent: 'linear-gradient(90deg, #EC4899, #8B5CF6)',
     glowColor: 'rgba(236,72,153,0.18)',
     skills: [
@@ -186,7 +179,7 @@ const SkillChip: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) 
 
 /* Category card */
 const SkillCard: React.FC<Group & { cardIndex: number }> = ({
-  Icon, title, subtitle, accent, glowColor, skills, cardIndex,
+  Icon, title, accent, glowColor, skills, cardIndex,
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 24 }}
@@ -217,9 +210,8 @@ const SkillCard: React.FC<Group & { cardIndex: number }> = ({
       <Icon size={18} strokeWidth={1.8} className="text-white" />
     </div>
 
-    {/* Title + subtitle */}
-    <h3 className="text-[15px] font-bold text-white/90 tracking-tight leading-tight">{title}</h3>
-    <p className="text-[10.5px] font-medium text-white/28 mt-1 mb-5 tracking-wide uppercase">{subtitle}</p>
+    {/* Title */}
+    <h3 className="text-[15px] font-bold text-white/90 tracking-tight leading-tight mb-5">{title}</h3>
 
     {/* Divider */}
     <div className="h-px mb-5" style={{ background: 'rgba(255,255,255,0.06)' }} />

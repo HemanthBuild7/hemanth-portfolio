@@ -7,10 +7,9 @@ type Degree = {
   schoolShort: string
   schoolColor: string
   schoolBg: string
-  location?: string
+  location: string
   degree: string
-  period: string
-  details: string[]
+  year: string
 }
 
 const DEGREES: Degree[] = [
@@ -21,29 +20,25 @@ const DEGREES: Degree[] = [
     schoolBg: 'linear-gradient(135deg, #C2410C, #EA580C)',
     location: 'Georgia, USA',
     degree: 'M.S. in Business Analytics',
-    period: 'Aug 2023 – Dec 2024',
-    details: [
-      'Master of Science in Business Analytics — coursework in ML, statistical modeling, optimization, and data-driven decision making.',
-      'Coordinated with faculty and maintained academic data systems supporting research and course delivery.',
-    ],
+    year: '2024',
   },
   {
     school: 'University of Leicester',
     schoolShort: 'UoL',
     schoolColor: '#F87171',
     schoolBg: 'linear-gradient(135deg, #B91C1C, #DC2626)',
+    location: 'Leicester, UK',
     degree: 'M.S. in Advanced Computer Science',
-    period: '2022',
-    details: [],
+    year: '2022',
   },
   {
     school: 'Andhra University',
     schoolShort: 'AU',
     schoolColor: '#38BDF8',
     schoolBg: 'linear-gradient(135deg, #0369A1, #0284C7)',
+    location: 'India',
     degree: "Bachelor's in Computer Science and Engineering",
-    period: '2017',
-    details: [],
+    year: '2017',
   },
 ]
 
@@ -93,7 +88,7 @@ const EducationSection: React.FC = () => (
                 className="flex-1 rounded-2xl p-7 md:p-9 transition-all duration-300"
                 style={{ background: 'rgba(255,255,255,0.022)', border: '1px solid rgba(255,255,255,0.055)' }}
               >
-                <div className={`flex flex-wrap items-start justify-between gap-4 ${item.details.length ? 'mb-6' : ''}`}>
+                <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex items-start gap-4">
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0
@@ -107,12 +102,10 @@ const EducationSection: React.FC = () => (
                         <span className="text-[14px] font-bold tracking-wide" style={{ color: item.schoolColor }}>
                           {item.school}
                         </span>
-                        {item.location && (
-                          <span className="flex items-center gap-1 text-[11px] text-white/28">
-                            <MapPin size={10} />
-                            {item.location}
-                          </span>
-                        )}
+                        <span className="flex items-center gap-1 text-[11px] text-white/28">
+                          <MapPin size={10} />
+                          {item.location}
+                        </span>
                       </div>
                       <h3 className="text-[18px] md:text-[20px] font-bold text-white leading-snug">
                         {item.degree}
@@ -122,23 +115,10 @@ const EducationSection: React.FC = () => (
 
                   <div className="flex items-center gap-1.5 text-[12px] text-white/28 shrink-0">
                     <Calendar size={12} />
-                    {item.period}
+                    {item.year}
                   </div>
                 </div>
 
-                {item.details.length > 0 && (
-                  <>
-                    <div className="h-px mb-6" style={{ background: 'rgba(255,255,255,0.05)' }} />
-                    <ul className="space-y-3">
-                      {item.details.map(detail => (
-                        <li key={detail} className="flex items-start gap-3 text-[14px] text-white/45 leading-[1.75]">
-                          <span className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'rgba(255,255,255,0.2)' }} />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
               </div>
             </motion.div>
           ))}
