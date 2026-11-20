@@ -19,7 +19,7 @@ const DEGREES: Degree[] = [
     schoolColor: '#FB923C',
     schoolBg: 'linear-gradient(135deg, #C2410C, #EA580C)',
     location: 'Georgia, USA',
-    degree: 'M.S. in Business Analytics',
+    degree: 'M.S. in Management Sciences and Quantitative Methods',
     year: '2024',
   },
   {
@@ -37,7 +37,7 @@ const DEGREES: Degree[] = [
     schoolColor: '#38BDF8',
     schoolBg: 'linear-gradient(135deg, #0369A1, #0284C7)',
     location: 'India',
-    degree: "Bachelor's in Computer Science and Engineering",
+    degree: 'Bachelor of Technology in Computer Science and Engineering',
     year: '2017',
   },
 ]

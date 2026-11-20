@@ -94,7 +94,7 @@ const ContactSection: React.FC = () => (
         {/* Resume link */}
         <div className="mt-5">
           <a
-            href="https://drive.google.com/file/d/1n6MG4yx6hHGKtjHDy-KDbfW-u5KHw1eS/view?usp=sharing"
+            href="https://drive.google.com/file/d/1lgmaYyn6iv-xJJV_AMGssY8eIRVG1xMv/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[15px] text-[#d1b68d]/75

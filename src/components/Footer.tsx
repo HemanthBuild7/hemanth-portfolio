@@ -12,7 +12,7 @@ const Footer: React.FC = () => (
               style={{ background: 'linear-gradient(135deg, #6366F1, #A855F7)' }}>
           HK
         </span>
-        <span className="text-[14px] font-semibold text-white/40 tracking-tight">Hemanth Kumar</span>
+        <span className="text-[14px] font-semibold text-white/40 tracking-tight">Hemanth Kumar K</span>
       </div>
 
       <p className="text-[13px] text-white/20 text-center">

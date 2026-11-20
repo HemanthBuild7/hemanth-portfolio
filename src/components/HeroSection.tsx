@@ -60,7 +60,7 @@ const HeroSection: React.FC = () => {
             {/* Main heading */}
             <h1 className="font-extrabold tracking-tight" style={{ fontSize: 'clamp(50px, 8vw, 92px)', lineHeight: 0.93 }}>
               <span className="block text-[#f8f2ea]">Hemanth</span>
-              <span className="block text-[#f8f2ea]">Kumar</span>
+              <span className="block text-[#f8f2ea]">Kumar K</span>
               <span className="block mt-1" style={{
                 background: 'linear-gradient(125deg, #f1d9af 0%, #d09d5d 46%, #ba7645 100%)',
                 WebkitBackgroundClip: 'text',
@@ -116,7 +116,7 @@ const HeroSection: React.FC = () => {
                 <ArrowRight size={16} strokeWidth={2.5} />
               </a>
               <a
-                href="https://drive.google.com/file/d/1n6MG4yx6hHGKtjHDy-KDbfW-u5KHw1eS/view?usp=sharing"
+                href="https://drive.google.com/file/d/1lgmaYyn6iv-xJJV_AMGssY8eIRVG1xMv/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full
@@ -218,7 +218,7 @@ const HeroSection: React.FC = () => {
               {/* Photo */}
               <img
                 src={profileImg}
-                alt="Hemanth Kumar"
+                alt="Hemanth Kumar K"
                 className="relative w-full h-[520px] md:h-[600px] object-cover rounded-[34px]
                            shadow-[0_32px_80px_rgba(0,0,0,0.6)]"
                 style={{ zIndex: 1, position: 'relative' }}

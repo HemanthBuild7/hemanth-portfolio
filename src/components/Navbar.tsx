@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         {/* Desktop CTA buttons */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://drive.google.com/file/d/1n6MG4yx6hHGKtjHDy-KDbfW-u5KHw1eS/view?usp=sharing"
+            href="https://drive.google.com/file/d/1lgmaYyn6iv-xJJV_AMGssY8eIRVG1xMv/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
               ))}
               <div className="flex gap-3 pt-5 pb-2">
                 <a
-                  href="https://drive.google.com/file/d/1n6MG4yx6hHGKtjHDy-KDbfW-u5KHw1eS/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1lgmaYyn6iv-xJJV_AMGssY8eIRVG1xMv/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 text-center py-3 rounded-full bg-white/[0.06] border border-white/10
